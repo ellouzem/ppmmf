@@ -105,8 +105,8 @@ namespace RegArchLib {
 	 */
 	double cMixNormResiduals::LogDensity(double theX) const
 	{
-		double logn1 = (-LOG_SQRT_2_PI - mvMixNorm[1]- theX*theX/2.0);
-		double logn2 = (-LOG_SQRT_2_PI - mvMixNorm[2]- theX*theX/2.0);
+		double logn1 = (-LOG_SQRT_2_PI - log(mvMixNorm[1])- theX*theX/2.0);
+		double logn2 = (-LOG_SQRT_2_PI - log(mvMixNorm[2])- theX*theX/2.0);
 		double p = mvMixNorm[0];
 		return p * logn1 + (1-p) * logn2;
 	}
